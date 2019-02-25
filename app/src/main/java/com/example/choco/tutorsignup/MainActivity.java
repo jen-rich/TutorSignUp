@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
@@ -19,22 +20,22 @@ public class MainActivity extends AppCompatActivity {
         password = findViewById(R.id.password);
     }
 
-    public  void login() {
-        if (username.getText().toString() == "teacher" && password.getText().toString() == "tut0r!ng") {
+    public void login(View v) {
+        if (username.getText().toString().equals("teacher") && password.getText().toString().equals("tut0r!ng")) {
             String url = "http://www.scholar.google.com";
             Intent i = new Intent(Intent.ACTION_VIEW);
             i.setData(Uri.parse(url));
             startActivity(i);
         }
 
-        if (username.getText().toString() == "tutored" && password.getText().toString() == "tut0r!ng") {
+        if (username.getText().toString().equals("tutored") && password.getText().toString().equals("tut0r!ng")) {
             String url = "http://www.google.com";
             Intent i = new Intent(Intent.ACTION_VIEW);
             i.setData(Uri.parse(url));
             startActivity(i);
         }
 
-        if (username.getText().toString() == "tutor" && password.getText().toString() == "tut0r!ng") {
+        if (username.getText().toString().equals("tutor") && password.getText().toString().equals("tut0r!ng")) {
             String url = "http://www.google.com";
             Intent i = new Intent(Intent.ACTION_VIEW);
             i.setData(Uri.parse(url));
