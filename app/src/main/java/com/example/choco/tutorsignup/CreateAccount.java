@@ -27,9 +27,7 @@ public class CreateAccount extends AppCompatActivity implements AdapterView.OnIt
         mDatabase = FirebaseDatabase.getInstance().getReference();
         username = findViewById(R.id.username);
         password = findViewById(R.id.password);
-        name = findViewById(R.id.name);
         accountType = findViewById(R.id.accountType);
-        idNum = findViewById(R.id.idNum);
     }
 
     public void onCheckboxClicked(View view) {

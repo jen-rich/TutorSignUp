@@ -7,18 +7,19 @@ public class Request {
     String room;
     String availability;
     String tutors;
-    String date;
+    String startDate;
+    String endDate;
     String time;
     String tutorsNeeded;
 
     public Request() { }
-    public Request(String teacherName, String subject, String room, String availability, String date, String time, String tutorsNeeded) {
+    public Request(String teacherName, String subject, String room, String availability, String startDate, String endDate, String time, String tutorsNeeded) {
         this.teacherName = teacherName;
         this.subject = subject;
         this.room = room;
         this.availability = availability;
         this.tutors = tutors;
-        this.date = date;
+        this.startDate = startDate;
         this.time = time;
         this.tutorsNeeded = tutorsNeeded;
     }

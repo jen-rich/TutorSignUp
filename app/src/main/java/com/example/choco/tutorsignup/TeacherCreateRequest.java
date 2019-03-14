@@ -2,11 +2,16 @@ package com.example.choco.tutorsignup;
 
 import android.content.Context;
 import android.net.Uri;
+import android.net.sip.SipSession;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import java.sql.Time;
+import java.util.Date;
+import java.util.List;
 
 
 /**
@@ -23,13 +28,21 @@ public class TeacherCreateRequest extends Fragment {
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+    private String teacherName;
+    private String subject;
+    private String room;
+    private boolean availibility;
+    private List<String> tutors;
+    private Date startDate;
+    private Date endDate;
+    private Time time;
+    private int tutorsNeeded;
+
 
     private OnFragmentInteractionListener mListener;
 
     public TeacherCreateRequest() {
+
 
     }
 
@@ -55,8 +68,7 @@ public class TeacherCreateRequest extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
+
         }
     }
 
