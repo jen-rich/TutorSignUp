@@ -9,13 +9,12 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
-
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class CreateAccount extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     private DatabaseReference mDatabase;
-    EditText username, password, name;
+    EditText username, password, name, idNum;
     Spinner accountType;
     CheckBox clubRole;
     String role;
@@ -30,6 +29,7 @@ public class CreateAccount extends AppCompatActivity implements AdapterView.OnIt
         password = findViewById(R.id.password);
         name = findViewById(R.id.name);
         accountType = findViewById(R.id.accountType);
+        idNum = findViewById(R.id.idNum);
     }
 
     public void onCheckboxClicked(View view) {
@@ -49,9 +49,7 @@ public class CreateAccount extends AppCompatActivity implements AdapterView.OnIt
                 if (checked)
                     clubRole = findViewById(R.id.sponsor);
             else
-                // I'm lactose intolerant
                 break;
-            // TODO: Veggie sandwich
         }
         role = clubRole.getText().toString();
     }
@@ -70,14 +68,15 @@ public class CreateAccount extends AppCompatActivity implements AdapterView.OnIt
         String user = username.getText().toString();
         String pass = password.getText().toString();
         String person = name.getText().toString();
-        writeNewAccount(person, user, pass, selected, role);
+        String id = idNum.getText().toString();
+        writeNewAccount(id, person, user, pass, selected, role);
         //helper.insertData(user, pass, em, selected, role);
     }
 
-    private void writeNewAccount(String name, String username, String password, String type, String role) {
+    private void writeNewAccount(String idNo, String name, String username, String password, String type, String role) {
         Account user = new Account(name, username, password, type, role);
 
-        mDatabase.child("users").child(name).setValue(user);
+        mDatabase.child("users").child(idNo).setValue(user);
     }
 
     public void goToLogin(View v) {

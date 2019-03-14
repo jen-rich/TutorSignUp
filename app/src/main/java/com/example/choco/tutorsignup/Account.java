@@ -24,7 +24,6 @@ public class Account {
         this.username = username;
         this.password = password;
         this.type = type;
-        role = "";
     }
 
 }
