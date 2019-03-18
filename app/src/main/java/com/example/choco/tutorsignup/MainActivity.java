@@ -35,8 +35,16 @@ public class MainActivity extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 String user = username.getText().toString();
                 Account login = dataSnapshot.child(user).getValue(Account.class);
-                if (login.getPassword() == password.getText().toString()) {
+                if (login.getPassword().equals(password.getText().toString())) {
                     Toast.makeText(MainActivity.this, "Login Successful!", Toast.LENGTH_SHORT).show();
+                    if (login.getType().equals("Teacher")) {
+                        Intent t = new Intent(getApplicationContext(), TeacherActivity.class);
+                        startActivity(t);
+                    }
+                    if (login.getType().equals("Student")) {
+                        Intent st = new Intent(getApplicationContext(), StudentActivity.class);
+                        startActivity(st);
+                    }
                 }
             }
 

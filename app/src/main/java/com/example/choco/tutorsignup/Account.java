@@ -1,7 +1,6 @@
 package com.example.choco.tutorsignup;
 
 public class Account {
-    String name;
     String username;
     String password;
     String type;
@@ -11,19 +10,30 @@ public class Account {
 
     }
 
-    public Account (String name, String username, String password, String type, String role) {
-        this.name = name;
+    public Account (String username, String password, String type, String role) {
         this.username = username;
         this.password = password;
         this.type = type;
         this.role = role;
     }
 
-    public Account (String name, String username, String password, String type) {
-        this.name = name;
+    public Account (String username, String password, String type) {
+
         this.username = username;
         this.password = password;
         this.type = type;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public String getType() {
+        return type;
     }
 
 }
