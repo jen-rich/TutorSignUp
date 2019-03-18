@@ -41,21 +41,34 @@
         tools:layout_editor_absoluteY="148dp" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/startDateTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="4dp"
         android:layout_marginStart="64dp"
-        android:text="f"
+        android:text="@string/start_date_title"
         app:layout_constraintBottom_toTopOf="@+id/startDate"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/endDateTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
         android:layout_marginStart="8dp"
-        android:text="TextView"
-        app:layout_constraintStart_toStartOf="@+id/textView2"
-        tools:layout_editor_absoluteY="114dp" />
+        android:text="@string/end_date_title"
+        app:layout_constraintBottom_toTopOf="@+id/endDate"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.614"
+        app:layout_constraintStart_toStartOf="@+id/startDateTitle" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="Button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 </android.support.constraint.ConstraintLayout>

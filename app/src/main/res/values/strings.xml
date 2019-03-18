@@ -30,4 +30,6 @@
         <item name="Teacher"></item>
         <item name="Student"></item>
     </string-array>
+    <string name="start_date_title">Starting Date</string>
+    <string name="end_date_title">Ending Date</string>
 </resources>
