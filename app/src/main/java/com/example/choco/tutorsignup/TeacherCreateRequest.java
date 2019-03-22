@@ -4,6 +4,7 @@ import android.content.Context;
 import android.net.Uri;
 import android.net.sip.SipSession;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -44,6 +45,7 @@ public class TeacherCreateRequest extends Fragment {
     public TeacherCreateRequest() {
 
 
+
     }
 
     /**
@@ -64,9 +66,16 @@ public class TeacherCreateRequest extends Fragment {
         return fragment;
     }
 
+    public void onCreateView( @Nullable Bundle savedInstanceState, LayoutInflater inflater, ViewGroup container ) {
+        View view = inflater.inflate(R.layout.fragment_teacher_create_request, container, false);
+
+    }
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
         if (getArguments() != null) {
 
         }
