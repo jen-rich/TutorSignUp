@@ -1,19 +1,18 @@
 package com.example.choco.tutorsignup;
 
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.widget.ListView;
 
-public class Fulfillment extends AppCompatActivity {
+public class Fulfillment {
+    String stdName;
+    String tcrName;
+    String ttrDate;
+    String ttrSubject;
 
-    private ListView fulfilled;
+    public Fulfillment() {}
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_fulfillment);
-
-        fulfilled = new ListView(getApplicationContext());
+    public Fulfillment(String stdName, String tcrName, String ttrDate, String ttrSubject) {
+        this.stdName = stdName;
+        this.tcrName = tcrName;
+        this.ttrDate = ttrDate;
+        this.ttrSubject = ttrSubject;
     }
-
 }

@@ -45,7 +45,7 @@ public class FirebaseTcrViewHolder extends RecyclerView.ViewHolder implements Vi
 
                 int itemPosition = getLayoutPosition();
 
-                Intent intent = new Intent(mContext, StudentActivity.class);
+                Intent intent = new Intent(mContext, FulfillActivity.class);
 
                 mContext.startActivity(intent);
             }

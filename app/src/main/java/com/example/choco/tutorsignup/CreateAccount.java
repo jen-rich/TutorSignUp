@@ -6,7 +6,6 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -22,8 +21,6 @@ public class CreateAccount extends AppCompatActivity implements AdapterView.OnIt
     DatabaseReference users;
     EditText username, password;
     Spinner accountType;
-    CheckBox clubRole;
-    String role;
     String selected;
 
     @Override
@@ -35,28 +32,6 @@ public class CreateAccount extends AppCompatActivity implements AdapterView.OnIt
         username = findViewById(R.id.username);
         password = findViewById(R.id.password);
         accountType = findViewById(R.id.accountType);
-    }
-
-    public void onCheckboxClicked(View view) {
-        // Is the view now checked?
-        boolean checked = ((CheckBox) view).isChecked();
-
-        // Check which checkbox was clicked
-        switch(view.getId()) {
-            case R.id.officer:
-                if (checked) {
-                    clubRole = findViewById(R.id.officer);
-                }
-
-            else
-                break;
-            case R.id.sponsor:
-                if (checked)
-                    clubRole = findViewById(R.id.sponsor);
-            else
-                break;
-        }
-        role = clubRole.getText().toString();
     }
 
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -75,7 +50,7 @@ public class CreateAccount extends AppCompatActivity implements AdapterView.OnIt
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 String user = username.getText().toString();
                 String pass = password.getText().toString();
-                writeNewAccount(user, pass, selected, role);
+                writeNewAccount(user, pass, selected);
             }
 
             @Override
@@ -86,8 +61,8 @@ public class CreateAccount extends AppCompatActivity implements AdapterView.OnIt
         //helper.insertData(user, pass, em, selected, role);
     }
 
-    private void writeNewAccount(String username, String password, String type, String role) {
-        Account user = new Account(username, password, type, role);
+    private void writeNewAccount(String username, String password, String type) {
+        Account user = new Account(username, password, type);
         users.child(username).setValue(user);
     }
 
